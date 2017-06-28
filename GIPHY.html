@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en=us">
+
+<head>
+    <title>GIPHY Homework</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/GIPHY.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Find Fun Sports GIF's!</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="sportInputName">Name a Sport</label>
+                        <input type="text" class="form-control" id="sportInputName" placeholder="Type your sport here">
+                    </div>
+                    <button id="submitButton" type="submit" class="btn btn-default">now submit that shit</button>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="buttonPanel"></div>
+            </div>
+        </div>
+        <div class="well well-lg">.gifs go here</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/GIPHY.js"></script>
+</body>
+
+</html>
