@@ -21,31 +21,18 @@ $(document).ready(function() {
         //   * Try using a loop that appends a button for each string in the array.
         //
 
-        //         createSportButton();
-
         function createSportButton() {
             $("#buttonPanel").empty();
             for (var i = 0; i < topics.length; i++) {
                 topics[i];
                 //   console.log(topics[i]);
                 $("<button>")
-                    .addClass("sportButton")
+                    .addClass("sportButton btn btn-success")
                     .text(topics[i])
                     .appendTo(".sportButtons");
             };
         };
         createSportButton();
-
-        //    function sportButtonClicked() {
-        //        var userInput = $("button").text();
-        //        searchGif(userInput);
-        //        displayGif(userInput);
-        //
-        //    }
-
-
-        // $("button").on('click', sportButtonClicked());
-
 
         // When the user clicks on a button, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page. 
         // and dynamically add a new button to the button panel (by placing the searched term into the original array)
@@ -61,15 +48,12 @@ $(document).ready(function() {
 
 
         //  function sportButtonClicked() {
-        //
-        //  };
+
         $("#buttonPanel").on("click", ".sportButton", function(sportButtonClicked) {
 
 
             var userInput = $(this).text();
-            console.log(userInput);
             searchGif(userInput);
-            //        displayGif(userInput);
         });
 
 
@@ -80,7 +64,6 @@ $(document).ready(function() {
                 })
                 .done(function(response) {
                     displayGif(response);
-                    console.log(response);
                 })
         }
 
@@ -89,10 +72,10 @@ $(document).ready(function() {
             $("#gifDisplay").empty();
             for (var i = 0; i < response.data.length; i++) {
                 var rating = "<div class='ratings'> Rating:  " + (response.data[i].rating) + " </div>";
-                var image = rating + '<img src= " ' + response.data[i].images.fixed_height_still.url +
+                var image = '<img src= " ' + response.data[i].images.fixed_height_still.url +
                     ' " data-still=" ' + response.data[i].images.fixed_height_still.url +
-                    ' " data-animate=" ' + response.data[i].images.fixed_height.url + '" data-state="still" class="movImage" style= "width:250px; height:250px">';
-        image = '<div class="col-md-4">' + image + "</div>";
+                    ' " data-animate=" ' + response.data[i].images.fixed_height.url + '" data-state="still" class="movImage" style= "width:250px; height:250px">' + rating;
+                image = '<div class="col-md-4">' + image + "</div>";
 
                 $("#gifDisplay").append(image);
             }
@@ -119,13 +102,6 @@ $(document).ready(function() {
 
 
 //GIPHY api key: 6f29dc744fc84e34a79cd0500c842093
-
-
-
-
-
-
-
 
 //4. When the user clicks one of the still GIPHY images, the gif should animate. If the user clicks the gif again, it should stop playing.
 //
